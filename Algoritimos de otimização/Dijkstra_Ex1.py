@@ -15,3 +15,12 @@ def dijkstra(graph, start):
     # Nós: A(0), B(∞), C(∞), D(∞), E(∞)
     distance = {node:float('infinity') for node in graph}
     distance[start] = 0
+    queue = [(0, start)]
+
+    while queue:
+        # Escolha o nó com a menor distância acumulada
+        current_distance, current_node = heapq.heappop(queue)
+
+        # se a distancia atual for maior que  distancia acumulado do nós, pule para o próximo
+        if current_distance > distance[current_node]:
+            continue
