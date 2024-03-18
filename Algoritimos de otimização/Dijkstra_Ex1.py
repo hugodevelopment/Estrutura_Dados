@@ -6,3 +6,12 @@
 # Repetição: Repetimos os passos 2 e 3 até que tenhamos visitado todos os nós ou encontrado o nó de destino.
 # Resultado: O resultado é o caminho mais curto do nó inicial ao nó de destino.
 # Aqui está um exemplo visual de como o algoritmo funciona:
+
+import heapq
+
+def dijkstra(graph, start):
+    # incialização
+    #  Precisamos imitar essa configuração  Nó inicial: A
+    # Nós: A(0), B(∞), C(∞), D(∞), E(∞)
+    distance = {node:float('infinity') for node in graph}
+    distance[start] = 0
