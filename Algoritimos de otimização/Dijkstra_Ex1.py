@@ -13,8 +13,8 @@ def dijkstra(graph, start):
     # incialização
     #  Precisamos imitar essa configuração  Nó inicial: A
     # Nós: A(0), B(∞), C(∞), D(∞), E(∞)
-    distance = {node:float('infinity') for node in graph}
-    distance[start] = 0
+    distances = {node:float('infinity') for node in graph}
+    distances[start] = 0
     queue = [(0, start)]
 
     while queue:
@@ -24,3 +24,23 @@ def dijkstra(graph, start):
         # se a distancia atual for maior que  distancia acumulado do nós, pule para o próximo
         if current_distance > distance[current_node]:
             continue
+
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
+
+         # Se a distância através do nó atual for menor, atualize a distância do vizinho
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(queue, (distance, neighbor))
+
+    return distances 
+
+
+# Exemplo de uso:
+graph = {
+    'A': [('B', 1), ('C', 3)],
+    'B': [('A', 1), ('C', 2)],
+    'C': [('A', 3), ('B', 2)]
+}
+print(dijkstra(graph, 'A'))
+
