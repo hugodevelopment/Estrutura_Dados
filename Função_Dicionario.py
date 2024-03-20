@@ -1,6 +1,7 @@
 def inva(d):
     r = {}
-    for key, value in zip(d.keys(), d.values()):
+    for key, value in d.items():
+        print(key,value)
         print("ola r ", r)
         if value in r:
             print("oi",r)
