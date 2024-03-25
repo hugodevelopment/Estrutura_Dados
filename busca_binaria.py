@@ -11,7 +11,7 @@ def busca_binaria(array, alvo):
     limite_superior = len(array) - 1
     meio = 0
     while (limite_inferior <= limite_superior):
-        meio = limite_inferior + limite_superior/2
+        meio = limite_inferior + limite_superior//2
         if array[meio] == alvo:
             return meio
         elif array[meio] < alvo:
@@ -19,3 +19,5 @@ def busca_binaria(array, alvo):
         else:
             limite_superior = meio - 1
         return - 1        
+
+print(busca_binaria([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5))        
