@@ -1,5 +1,4 @@
 //Implementação Iterativa:
-
 int PesquisaBinaria (int vet[], int chave, int Tam)
 {
      int inf = 0;     // limite inferior (o primeiro índice de vetor em C é zero          )
