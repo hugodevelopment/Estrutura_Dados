@@ -12,4 +12,10 @@ def busca_binaria(array, alvo):
     meio = 0
     while (limite_inferior <= limite_superior):
         meio = limite_inferior + limite_superior/2
-    
+        if array[meio] == alvo:
+            return meio
+        elif array[meio] < alvo:
+            limite_inferior = meio + 1 
+        else:
+            limite_superior = meio - 1
+        return - 1        
