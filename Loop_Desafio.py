@@ -7,10 +7,12 @@
 
 
 def fib(n):
-    if n <= 1:
-        return n
-    else:
-        return fib(n-1) + fib(n-2)
+  if n is None:
+    n = 0
+  if n <= 1:
+    return n
+  else:
+    return fib(n-1) + fib(n-2)
 
-print(fib(8))
+print(fib(10))
 
